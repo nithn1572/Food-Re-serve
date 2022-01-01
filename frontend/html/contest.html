@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contest Participants</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.css" integrity="sha512-6S2HWzVFxruDlZxI3sXOZZ4/eJ8AcxkQH1+JjSe/ONCEqR9L4Ysq5JdT5ipqtzU7WHalNwzwBv+iE51gNHJNqQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link rel="stylesheet" type="text/css" href="../css/contest.css">
+</head>
+<body data-spy="scroll" data-target="#myScrollspy" style="background-color: rgb(255, 253, 251);">
+
+    <nav class="navbar navbar-default navbar-fixed-top" data-spy="affix" data-offset-top="205" style="padding:8px">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar"> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                    <span class="icon-bar"></span> 
+                  </button> 
+                <a class="navbar-brand" href="#">
+                   <span> <img id="logo" src="/img/CMRlogo.PNG"> </span>Get certified
+                </a> 
+              </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right" >
+                    <li><a href="#profile" id="userID"></a></li>
+                    <li><a href="#logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+
+
+      <div class="row">
+        <div class="row">
+          <div id="stats" class="container col">
+            <br>
+            <div class="row"> <h2 id="contestName"></h2> </div>
+            <div class="row"> <h2 id="contestID"></h2> </div>
+            <div class="row"> <h2 id="pCount"></h2> </div>
+            <div class="row"> <h2 id="certifiedCount"></h2> </div>
+            <div class="row"> <h2 id="excellence"></h2> </div>
+            <br>
+            <div class="row"> <h2>Select your Template: </h2> </div>
+            <div class="row">
+              <div class="col-sm-4"> <img class="templateModel" id="simple" src="../img/simple.jpg" alt="Simple" > </div>
+              <div class="col-sm-4"> <img class="templateModel" id="simpleTwo" src="../img/simpleTwo.jpg" alt="SimpleTwo" > </div>
+              <div class="col-sm-4"> <img class="templateModel" id="BZ" src="../img/BZ.jpg" alt="BZ" > </div>
+              <br>
+            </div>
+            <br><br>
+          </div>
+
+        </div>
+
+
+        <div class="row"> <h3 id="note" style="text-align: center;color: rgb(131, 131, 131);font-weight: 300;">Add your Participants through .csv File</h3> </div>
+        <div class="container">
+          <div class="row">
+            <div class="col">
+                <buttton id="upload-btn" class="btn btn-success btn-block">Upload .csv File</buttton>
+            </div>
+          </div>
+        </div>
+        <br><br>
+
+
+        <div class="row">
+            <div class="col-sm-5">
+              <h2 id="nonCertifiedListHead">Non-Certified List</h2>
+              <table id="participantsTable" class="table table-hover"></table>
+              <buttton id="sendmail-btn" class="btn btn-primary btn-block">Send Mails</buttton>
+              <br>
+            </div>
+            <div class="col-sm-2"></div>
+            <div class="col-sm-5">
+              <h2 id="CertifiedListHead">Certified List</h2>
+              <table id="certifiedParticipantsTable" class="table table-hover"></table>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+          
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title" >Upload Participant Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+
+                <!-- <form id="uploadForm" action="/api/participant/uploadCSV" method="post" enctype="multipart/form-data"> -->
+                  <h5 style="font-size: medium;font-weight: bold;">Click Here to check the Sample .csv format</h5>
+                  <img src="../img/sampleCSV.jpg" alt="Sample CSV File" id="csv-img">
+                  <br>
+                  <input id="file" name="file" type="file" class="form-control" style="font-size: medium;"  >
+                  <button id="formSubmit" class="btn btn-primary btn-block" style="font-size: medium;white-space: normal;">Upload .CSV file</button>
+                <!-- </form> -->
+
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+
+
+      </div>
+
+
+    </main>
+    
+
+
+
+    
+
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/downloadjs/1.4.8/download.min.js" integrity="sha512-WiGQZv8WpmQVRUFXZywo7pHIO0G/o3RyiAJZj8YXNN4AV7ReR1RYWVmZJ6y3H06blPcjJmG/sBpOVZjTSFFlzQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-replace-svg="nest"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha512-lbwH47l/tPXJYG9AcFNoJaTMhGvYWhVM9YI43CT+uteTRRaiLCui8snIgyAN8XWgNjNhCqlAUdzZptso6OCoFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="/js/contest.js"></script>
+</body>
+</html>

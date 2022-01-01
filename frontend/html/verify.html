@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email verification</title>
+    <link rel="stylesheet" href="/css/access.css">
+    <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'></link>  
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="undefined" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>verify Email</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+    <body>
+        <section style="padding-top: 3cm;">
+          <div class="container" style="border-radius: 30px;">
+            <div class="user signinBx" >
+              <div class="imgBx"><img src="https://rolliwrites.files.wordpress.com/2020/06/competentelderlygemsbuck-small.gif" alt="" /></div>
+              <div class="formBx">
+               <div class="form">
+                  <h2>Verify Your Email</h2>
+                  <div id="alertmsg">
+                  </div>
+                  <input type="text" name="email" placeholder="Email" class="email"/>
+                  <input type="password" name="Passkey" placeholder="Passkey" class="passkey"/>
+                  <input type="submit" name="" value="Submit" onclick="verify()" style="border-radius: 5px;"/>
+                  <p class="signup">
+                    <button style="background-color:white;border: none ; color:#677eff ;height: 1cm; padding-left: 1cm;padding-right: 1cm; float: right;" onclick="sendkey()" ><b><u>Resend verification key</u></b></button>
+                  </p>
+               </div>
+              </div>
+            </div>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+             <script src="https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.all.min.js"></script>  
+            <script src="/js/verify.js"></script>
+      </body>
+</html>
